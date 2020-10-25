@@ -1,4 +1,5 @@
 """
+Author: Sally Sykora, Zach Ryba
 File: testgrayscale.py
 Tests a function for converting a color image to
 grayscale.
@@ -6,6 +7,7 @@ grayscale.
 
 from images import Image
 
+# Converts image to  grayscale
 def grayscale(image):
     """Converts the argument image to grayscale."""
     for y in range(image.getHeight()):
@@ -16,7 +18,10 @@ def grayscale(image):
             b = int(b * 0.114)
             lum = r + g + b
             image.setPixel(x, y, (lum, lum, lum))
+
+# Calls greyscale function and then converts to sepia
 def sepia(image):
+# Calls grayscale function
     grayscale(image)
     for y in range(image.getHeight()):
         for x in range(image.getWidth()):
@@ -31,12 +36,16 @@ def sepia(image):
                 r = min(int(r * 1.08),255)
                 b = int(b * 0.93)
             image.setPixel(x, y, (r, g, b))
+
+# Defines the main function
 def main(filename = "smokey.gif"):
     image = Image(filename)
     print("Close the image window to continue. ")
+    # Displays original image
     image.draw()
     sepia(image)
     print("Close the image window to quit. ")
+    #Displays converted image
     image.draw()
 
 if __name__ == "__main__":
