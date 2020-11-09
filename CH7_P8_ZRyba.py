@@ -1,7 +1,7 @@
 """
 Author: Sally Sykora, Zach Ryba
 File: testgrayscale.py
-Tests a function for converting a color image to
+Tests a function feeor converting a color image to
 grayscale.
 """
 
